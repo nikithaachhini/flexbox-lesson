@@ -1,0 +1,346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE>Flexbox by Nikitha Achhini</TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<META NAME="DESCRIPTION" CONTENT="Why flexbox and its properties along with its drawbacks.">
+	<META NAME="" CONTENT="">
+	<META NAME="apple-mobile-web-app-capable" CONTENT="yes">
+	<META NAME="apple-mobile-web-app-status-bar-style" CONTENT="black-translucent">
+	<META NAME="csrf-param" CONTENT="authenticity_token">
+	<META NAME="csrf-token" CONTENT="TBhwzajGDHEg2byqRSFwPK24pC6SpUKtoGEC78ppIlA=">
+	<META NAME="msapplication-tap-highlight" CONTENT="no">
+	<META NAME="twitter:card" CONTENT="summary_large_image">
+	<META NAME="twitter:description" CONTENT="Why flexbox and its properties along with its drawbacks.">
+	<META NAME="twitter:image" CONTENT="https://s3.amazonaws.com/media-p.slid.es/thumbnails/cde6b3a06671ebf2fa9624abaae9b263/thumb.jpg">
+	<META NAME="twitter:site" CONTENT="@Slides">
+	<META NAME="twitter:title" CONTENT="Flexbox">
+	<META NAME="viewport" CONTENT="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<META HTTP-EQUIV="X-UA-Compatible" CONTENT="IE=edge,chrome=1">
+	<META NAME="" CONTENT="Flexbox by Nikitha Achhini">
+	<META NAME="" CONTENT="Why flexbox and its properties along with its drawbacks.">
+	<META NAME="" CONTENT="Slides">
+	<META NAME="" CONTENT="https://s3.amazonaws.com/media-p.slid.es/thumbnails/cde6b3a06671ebf2fa9624abaae9b263/thumb.jpg">
+	<META NAME="" CONTENT="article">
+	<META NAME="" CONTENT="http://slides.com/nikithaachhini/deck-0">
+	<META NAME="" CONTENT="146002942236376">
+	<SCRIPT>
+  if( !/dnt=1/.test( window.location.search ) ) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-39670045-1', 'auto');
+    ga('send', 'pageview');
+
+  }
+
+</SCRIPT>
+	<!--[if lt IE 9]>
+    <script src="//assets.slid.es/assets/html5shiv-b51d49ab0e89834a02ffce4a59905afb.js"></script>
+<![endif]-->
+	<STYLE TYPE="text/css">
+	<!--
+		H2.ctl { font-family: "Noto Sans Devanagari" }
+		H4.ctl { font-family: "Noto Sans Devanagari" }
+		H3.ctl { font-family: "Noto Sans Devanagari" }
+		H5.ctl { font-family: "Noto Sans Devanagari" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<DIV ID="container" DIR="LTR">
+	<UL>
+		<LI><P STYLE="margin-bottom: 0in"><A HREF="/explore">Explore</A> 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in"><A HREF="/features">Features</A> 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in"><A HREF="/pricing">Pricing</A> 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in"><A HREF="/users/sign_in">Log in</A>
+				</P>
+		<LI><P><A HREF="/pricing">Sign up</A> 
+		</P>
+	</UL>
+	<DIV ID="main" DIR="LTR">
+		<H1>Flexbox</H1>
+		<H2 CLASS="western" ALIGN=CENTER><FONT COLOR="#a8276b">elegant
+		layout mode for more civilized age</FONT></H2>
+		<H2 CLASS="western">Different layouts</H2>
+		<UL>
+			<LI><P STYLE="margin-bottom: 0in">Block layout - vertically based
+			layout used for laying out documents. Provides ability to float
+			elements or to lay them over multiple columns. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">Inline layout - horizontally
+			based one used for laying out text. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">Table layout - used for 2D
+			tabular data. 
+			</P>
+			<LI><P>Positioned layout - for explicit positioning. 
+			</P>
+		</UL>
+		<H2 CLASS="western">Why Flexible box layout?</H2>
+		<BLOCKQUOTE><EM>My goal in doing Flexbox and later Grid was to
+		replace all the crazy float/table/inline-block/etc hacks that I’d
+		had to master as a webdev</EM></BLOCKQUOTE>
+		<BLOCKQUOTE>&nbsp; <A HREF="http://www.xanthir.com/blog/" TARGET="_blank"><FONT COLOR="#4b0082">Tab
+		Atkins Jr.</FONT></A>(primary author for those specs)</BLOCKQUOTE>
+		<BLOCKQUOTE>&nbsp;</BLOCKQUOTE>
+		<H2 CLASS="western">Issues</H2>
+		<UL>
+			<LI><P STYLE="margin-bottom: 0in">with float - need to do
+			clearfix, no vertical centering. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">with inline-block -
+			&quot;white-space&quot; issue disturbs the layout 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">with table - complex code,
+			responsive design, hacks 
+			</P>
+			<LI><P>Earlier layouts can't support orientation changing,
+			resizing and shrinking. 
+			</P>
+		</UL>
+		<H2 CLASS="western">What is flex box?</H2>
+		<UL>
+			<LI><P STYLE="margin-bottom: 0in">It is used to layout, align and
+			distribute space between elements in document even if their size
+			is unknown. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">It allows the container to alter
+			its item's width/height as per the viewport/screen size. 
+			</P>
+			<LI><P>It is direction agnostic so vertical centering, reordering,
+			same height columns and changing direction is easy. 
+			</P>
+		</UL>
+		<H2 CLASS="western">Browser Support</H2>
+		<H2 CLASS="western">Terminology</H2>
+		<H2 CLASS="western">Flex Container Properties</H2>
+		<UL>
+			<LI><P STYLE="margin-bottom: 0in">flex 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">flex-direction 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">flex-wrap 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">flex-flow 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">justify-content 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">align-items 
+			</P>
+			<LI><P>align-content 
+			</P>
+		</UL>
+		<P><STRONG><A HREF="http://codepen.io/enxaneta/full/adLPwv/" TARGET="_blank"><FONT COLOR="#4b0082">flexbox
+		playground</FONT></A></STRONG></P>
+		<H2 CLASS="western"><STRONG>Order</STRONG></H2>
+		<UL>
+			<LI><P STYLE="margin-bottom: 0in">flex items are displayed in same
+			order as specified in source document. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">This property controls how flex
+			item is ordered in flex container. 
+			</P>
+			<LI><P>ex: .flex-item { order: &lt;integer&gt;;} 
+			</P>
+		</UL>
+		<P><EM><STRONG><A HREF="http://codepen.io/nikitha-achhini/pen/OWqWXE" TARGET="_blank"><FONT COLOR="#4b0082">Reordering
+		stuff</FONT></A></STRONG></EM></P>
+		<P><STRONG>Flex Item Properties</STRONG></P>
+		<H2 CLASS="western">flex-grow</H2>
+		<UL>
+			<LI><P STYLE="margin-bottom: 0in">allows the flex item to grow if
+			needed. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">determines the amount of free
+			space to be occupied by flex Item in flex Container. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">Ex: .flex-item {flex-grow:
+			&lt;number&gt;}; 
+			</P>
+			<LI><P>Default value is 0 
+			</P>
+		</UL>
+		<P><FONT COLOR="#4b0082"><A HREF="http://codepen.io/matuzo/pen/zvXQyj" TARGET="_blank">Flex-grow</A>&nbsp;</FONT><EM><FONT COLOR="#4b0082">Example</FONT></EM><FONT COLOR="#4b0082">&nbsp;</FONT></P>
+		<P><STRONG><EM><A HREF="http://codepen.io/matuzo/pen/ZQEWjg" TARGET="_blank"><FONT COLOR="#4b0082">Let's
+		Chuck it</FONT></A></EM></STRONG></P>
+		<H2 CLASS="western">flex-basis</H2>
+		<UL>
+			<LI><P STYLE="margin-bottom: 0in">initial size of flex item before
+			any space is distributed based on flex factors. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">default value is auto - means
+			initial width of flex item depends on size of its content. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">Ex: .flex-item{flex-basis:
+			&lt;width&gt; | &lt;length&gt;}; 
+			</P>
+			<LI><P>negative values are not allowed. 
+			</P>
+		</UL>
+		<P><STRONG><EM><A HREF="http://codepen.io/matuzo/pen/GoRqOP" TARGET="_blank"><FONT COLOR="#4b0082">flex-basis
+		with flex-grow</FONT></A></EM></STRONG></P>
+		<H2 CLASS="western">flex-shrink</H2>
+		<UL>
+			<LI><P STYLE="margin-bottom: 0in">allows the flex item to shrink
+			if needed 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">means how much flex item would
+			shrink with respect to other items when there is no enough space
+			in flex container 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">Ex: .flex-item {flex-shrink:
+			&lt;number&gt;}; 
+			</P>
+			<LI><P>default value is 1 
+			</P>
+		</UL>
+		<P><EM><STRONG><A HREF="http://codepen.io/noahblon/pen/NqrYra" TARGET="_blank"><FONT COLOR="#4b0082">Fixed
+		Items</FONT></A></STRONG></EM></P>
+		<H2 CLASS="western">flex</H2>
+		<UL>
+			<LI><P STYLE="margin-bottom: 0in">short hand property for
+			flex-grow, flex-shrink and flex-basis. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">flex-shrink and flex-basis are
+			optional. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">default value is 0 1 auto. 
+			</P>
+			<LI><P>Ex: &nbsp;.flex-item{flex: none | [ &lt;'flex-grow'&gt;
+			&lt;'flex-shrink'&gt;? || &lt;'flex-basis'&gt; ]}; 
+			</P>
+		</UL>
+		<P><EM><STRONG><FONT COLOR="#4b0082"><A HREF="http://codepen.io/nikitha-achhini/pen/BWaNzO" TARGET="_blank">flex</A><A HREF="http://codepen.io/nikitha-achhini/pen/BWaNzO" TARGET="_blank">&nbsp;Demonstration</A></FONT></STRONG></EM></P>
+		<H2 CLASS="western">align-self</H2>
+		<UL>
+			<LI><P STYLE="margin-bottom: 0in">used to align specific flex
+			item. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">possible to override the
+			align-items property for specific flex items. 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">It accepts 5 values similar to
+			align-items property. 
+			</P>
+			<LI><P>Ex: &nbsp;.flex-item {align-self: flex-start | flex-end |
+			center | baseline | stretch}; 
+			</P>
+		</UL>
+		<P><STRONG><EM><A HREF="http://codepen.io/nikitha-achhini/pen/VPRbwZ" TARGET="_blank"><FONT COLOR="#4b0082">Time
+		for Demo</FONT></A></EM></STRONG></P>
+		<H2 CLASS="western">So flexbox is amazing?</H2>
+		<UL>
+			<LI><P STYLE="margin-bottom: 0in">for small scale layouts - Yes!
+			Defintely 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in">flexbox is designed for
+			component layouts in pages like navigation, forms, pagination etc.
+						</P>
+			<LI><P>for large scale layouts/complex two-dimensional ones&nbsp;
+			- Prefer &quot;<A HREF="https://css-tricks.com/snippets/css/complete-guide-grid/" TARGET="_blank"><FONT COLOR="#008080">Grids</FONT></A>&quot;
+						</P>
+		</UL>
+		<P><STRONG><A HREF="https://github.com/philipwalton/flexbugs" TARGET="_blank"><FONT COLOR="#4b0082">flexbox
+		bugs</FONT></A></STRONG></P>
+		<H2 CLASS="western">Resources</H2>
+		<UL>
+			<LI><P STYLE="margin-bottom: 0in"><A HREF="https://developer.mozilla.org/en-US/docs/Web/CSS/Layout_mode" TARGET="_blank"><FONT COLOR="#4b0082">Layout
+			mode in css | MDN</FONT></A> 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in"><A HREF="https://css-tricks.com/flex-grow-is-weird/" TARGET="_blank"><FONT COLOR="#4b0082">https://css-tricks.com/flex-grow-is-weird/</FONT></A>
+						</P>
+			<LI><P STYLE="margin-bottom: 0in"><A HREF="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" TARGET="_blank"><FONT COLOR="#4b0082">https://css-tricks.com/snippets/css/a-guide-to-flexbox/</FONT></A>
+						</P>
+			<LI><P STYLE="margin-bottom: 0in"><A HREF="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" TARGET="_blank"><FONT COLOR="#4b0082">mdn
+			flexbox</FONT></A>,<A HREF="https://medium.freecodecamp.com/understanding-flexbox-everything-you-need-to-know-b4013d4dc9af#.kcyv1ig7v" TARGET="_blank"><FONT COLOR="#4b0082">
+			medium blogs</FONT></A> 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in"><A HREF="http://spaceninja.com/2015/08/24/what-is-flexbox/" TARGET="_blank"><FONT COLOR="#4b0082">http://spaceninja.com/2015/08/24/what-is-flexbox/</FONT></A>
+						</P>
+			<LI><P STYLE="margin-bottom: 0in"><A HREF="http://blog.karenmenezes.com/2014/apr/13/floats-inline-block-or-display-table-or-flexbox/" TARGET="_blank"><FONT COLOR="#4b0082">float
+			Vs inline-block Vs table Vs flexbox</FONT></A> 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in"><A HREF="https://drafts.csswg.org/css-flexbox-1/" TARGET="_blank"><FONT COLOR="#4b0082">https://drafts.csswg.org/css-flexbox-1/</FONT></A>
+						</P>
+			<LI><P STYLE="margin-bottom: 0in"><A HREF="https://bitsofco.de/6-reasons-to-start-using-flexbox/" TARGET="_blank"><FONT COLOR="#4b0082">reasons
+			to use flexbox</FONT></A> 
+			</P>
+			<LI><P STYLE="margin-bottom: 0in"><A HREF="https://codepen.io/noahblon/post/practical-guide-to-flexbox-dont-forget-about-flex-shrink" TARGET="_blank"><FONT COLOR="#4b0082">don't
+			forget about flex-shrink</FONT></A> 
+			</P>
+			<LI><P><A HREF="https://philipwalton.github.io/solved-by-flexbox/" TARGET="_blank"><FONT COLOR="#4b0082">solved
+			by flexbox</FONT></A> 
+			</P>
+		</UL>
+		<H1>Thank You!</H1>
+		<H2 CLASS="western">Any questions?</H2>
+		<H4 CLASS="western">Flexbox</H4>
+		<P>By Nikitha Achhini</P>
+		<P><A HREF="/pricing%3Fref=caplt">Create a presentation like this </A>
+		</P>
+		<H3 CLASS="western">Flexbox</H3>
+		<P>Why flexbox and its properties along with its drawbacks.</P>
+		<UL>
+			<LI><P>5 
+			</P>
+		</UL>
+		<H3 CLASS="western"><A HREF="/nikithaachhini">Nikitha Achhini</A> 
+		</H3>
+		<P>Web developer 
+		</P>
+		<DIV ID="disqus_thread" DIR="LTR">
+			<P>Loading comments...</P>
+		</DIV>
+	</DIV>
+	<H5 CLASS="western">Product</H5>
+	<P><A HREF="http://slides.com/">Home</A> <A HREF="http://slides.com/explore">Explore</A>
+	<A HREF="http://slides.com/features">Features</A> <A HREF="http://slides.com/pricing">Pricing</A>
+	<A HREF="http://slides.com/developers">Developers</A> 
+	</P>
+	<H5 CLASS="western">Help</H5>
+	<P><A HREF="http://help.slides.com/" TARGET="_blank">Forum</A>
+	<A HREF="http://help.slides.com/knowledgebase" TARGET="_blank">Knowledge
+	Base</A> <A HREF="http://help.slides.com/">Leave Feedback</A> <A HREF="http://help.slides.com/">Report
+	an Issue</A> 
+	</P>
+	<H5 CLASS="western">Community</H5>
+	<P><A HREF="http://blog.slides.com/" TARGET="_blank">Blog</A>
+	<A HREF="http://twitter.com/slides" TARGET="_blank">Twitter</A>
+	<A HREF="http://facebook.com/slidesapp" TARGET="_blank">Facebook</A>
+	<A HREF="http://plus.google.com/+slidesapp/" TARGET="_blank">Google+</A>
+		</P>
+	<H5 CLASS="western">Company</H5>
+	<P STYLE="margin-bottom: 0in"><A HREF="http://slides.com/about">About
+	Slides</A> <A HREF="http://slides.com/changelog">What's New</A>
+	<A HREF="http://slides.com/terms">Terms of Service</A> <A HREF="http://slides.com/privacy">Privacy
+	Policy</A> 
+	</P>
+	<P STYLE="margin-bottom: 0in">© 2017 Slides, Inc.</P>
+</DIV>
+<P><!--! end of #container --><SCRIPT>
+UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/f7sH7NavrjjvuGxByaw.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+
+UserVoice.push(['set', {
+  accent_color: '#448dd6',
+  trigger_color: 'white',
+  trigger_background_color: 'rgba(46, 49, 51, 0.6)',
+  position: 'automatic'
+}]);
+
+
+</SCRIPT><SCRIPT>
+	var SLConfig = {"deck":{"id":919350,"slug":"deck-0","title":"Flexbox","description":"Why flexbox and its properties along with its drawbacks.","width":960,"height":700,"visibility":"all","published_at":"2017-02-22T10:01:08.090Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/cde6b3a06671ebf2fa9624abaae9b263/thumb.jpg","view_count":5,"user":{"id":653504,"username":"nikithaachhini","name":"Nikitha Achhini","description":"Web developer ","thumbnail_url":"https://www.gravatar.com/avatar/93f965319fb6b834f57069eedf66dddd?s=140\u0026d=https%3A%2F%2Fs3.amazonaws.com%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","paid":false,"pro":false,"lite":false,"team_id":null,"settings":{"id":501832,"present_controls":true,"present_upsizing":true,"present_notes":true}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"white-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"should_loop":false,"share_notes":false,"slide_number":false,"rtl":false,"version":2,"collaborative":true,"deck_user_editor_limit":1,"data_updated_at":1487937717406,"font_typekit":null,"font_google":null}};
+
+</SCRIPT><SCRIPT SRC="smb://assets.slid.es/assets/application-09c5e90801a76f98c700e20d66c09ab3.js"></SCRIPT><SCRIPT SRC="smb://assets.slid.es/assets/reveal.min-f22737903dbc1aaa2b488c7d1f88bd97.js"></SCRIPT><BR><BR>
+</P>
+</BODY>
+</HTML>
